@@ -1,38 +1,88 @@
+/* src/App.css */
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+.app-header {
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #000000e0;
+  color: rgba(255, 255, 255, 0.507);
 }
 
-.App-link {
-  color: #61dafb;
+.app-section {
+  flex-grow: 1;
+  margin-top: 50px; /* Adjusted to avoid overlap with header */
+  overflow-y: auto; /* Enable vertical scrolling */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  background: none;
+  border: 1px solid #85858573;
+  color:#ccccccab;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+}
+
+button:hover {
+  background: #3030308e;
+}
+
+main {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  margin-top: 1rem;
+}
+
+form input {
+  flex: 1;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+form button {
+  padding: 0.5rem 1rem;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.message.sent {
+  justify-content: flex-end;
+}
+
+.message.received {
+  justify-content: flex-start;
+}
+
+.message img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.message p {
+  background: #f70909cd;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
